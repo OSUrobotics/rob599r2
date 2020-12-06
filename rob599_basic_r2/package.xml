@@ -3,7 +3,7 @@
 <package format="3">
   <name>rob599_basic_r2</name>
   <version>0.1.0</version>
-  <description>ROB 599 ROS 2 Examples </description>
+  <description>ROB 599 ROS 2 Examples</description>
   <maintainer email="smartw@oregonstate.edu">Bill Smart</maintainer>
   <license>BSD 3-Clause</license>
 
@@ -19,5 +19,5 @@
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
 
-  <depend>rob599_interfaces</depend>  
+  <depend>rob599_msgs/depend>  
 </package>
