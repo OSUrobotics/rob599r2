@@ -61,7 +61,7 @@ def doubler(args=None):
 
 # Add random gaussian noise
 def noiser(args=None):
-	run_node(lambda x: gauss(x, 1), args)
+	run_node(lambda x: int(gauss(x, 1)), args)
 
 
 # This is a general-purpose entry point.	
@@ -71,11 +71,11 @@ def run_node(f, args=None):
 
 	# Make a node class.  The idiom in ROS2 is to encapsulte everything in a class
 	# that derives from Node.
-	publisher = ValueManipulator(f)
+	manip = ValueManipulator(f)
 
 	# The spin() call gives control over to ROS2, and it now takes a Node-derived
 	# class as a parameter.
-	rclpy.spin(publisher)
+	rclpy.spin(manip)
 
 	# Make sure we shutdown everything cleanly.  This should happen, even if we don't
 	# include this line, but you should do it anyway.
