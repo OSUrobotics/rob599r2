@@ -16,7 +16,7 @@ def generate_launch_description():
         # The doubler node.
         launch_ros.actions.Node(
             package='rob599_basic',
-            executable='doubler',
+            executable='noiser',
             name='doubler',
             remappings=[
                 ('multiplied', 'doubled'),

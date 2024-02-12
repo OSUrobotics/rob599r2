@@ -32,6 +32,7 @@ setup(
             'action_client = rob599_basic.action_client:main',
             'doubler = rob599_basic.multiplier:doubler',
             'noiser = rob599_basic.multiplier:noiser',
+            'parameter_demo = rob599_basic.params:main',
         ],
     },
 )
