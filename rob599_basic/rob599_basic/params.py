@@ -31,14 +31,14 @@ class ParamDemo(Node):
 		# You have to declare a parameter before you use it.  The Python API has
 		# no implementation of on_parameter_event(), which means you can't associate
 		# a callback with parameter changes.
-		self.declare_parameter('speed', 'fast')
+		self.declare_parameter('speed', 10.0) #'fast')
 
 		self.timer = self.create_timer(1, self.callback)
 
 	# This callback will be called periodically.  Since on_callback_event() is not
 	# implemented in Python, we're reduced to polling for the value.
 	def callback(self):
-		speed = self.get_parameter('speed').get_parameter_value().string_value
+		speed = self.get_parameter('speed').get_parameter_value().double_value
 		self.get_logger().info(f'Parameter value is: {speed}')
 
 
