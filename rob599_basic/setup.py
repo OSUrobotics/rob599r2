@@ -1,3 +1,6 @@
+import os
+from glob import glob
+
 from setuptools import setup
 
 package_name = 'rob599_basic'
@@ -10,6 +13,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -26,6 +30,8 @@ setup(
             'client = rob599_basic.service_client:main',
             'action_server = rob599_basic.action_server:main',
             'action_client = rob599_basic.action_client:main',
+            'doubler = rob599_basic.multiplier:doubler',
+            'noiser = rob599_basic.multiplier:noiser',
         ],
     },
 )

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
+
   <name>rob599_basic</name>
   <version>0.1.0</version>
   <description>ROB 599 ROS 2 Examples</description>
@@ -18,6 +19,8 @@
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
 
   <depend>rob599_msgs</depend>  
+
 </package>
