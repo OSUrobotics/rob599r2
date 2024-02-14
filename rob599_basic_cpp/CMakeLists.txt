@@ -23,6 +23,7 @@ find_package(rob599_msgs REQUIRED)
 add_executable(node src/node.cpp)
 add_executable(counter src/counter.cpp)
 add_executable(doubler src/doubler.cpp)
+add_executable(params src/params.cpp)
 add_executable(fib_server src/fib_server.cpp)
 add_executable(fib_client src/fib_client.cpp)
 add_executable(fib_client_2 src/fib_client_2.cpp)
@@ -35,6 +36,7 @@ add_executable(fib_client_2 src/fib_client_2.cpp)
 ament_target_dependencies(node rclcpp)
 ament_target_dependencies(counter rclcpp std_msgs)
 ament_target_dependencies(doubler rclcpp std_msgs)
+ament_target_dependencies(params rclcpp std_msgs)
 ament_target_dependencies(fib_server rclcpp std_msgs rob599_msgs)
 ament_target_dependencies(fib_client rclcpp std_msgs rob599_msgs)
 ament_target_dependencies(fib_client_2 rclcpp std_msgs rob599_msgs)
@@ -48,6 +50,7 @@ install(TARGETS
   node
   counter
   doubler
+  params
   fib_server
   fib_client
   fib_client_2
