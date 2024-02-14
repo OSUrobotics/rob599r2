@@ -36,6 +36,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Doubler.srv"
+  "srv/FibService.srv"
   "action/Fibonacci.action"
 )
 ament_package()
