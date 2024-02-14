@@ -8,7 +8,7 @@
 #include <rclcpp/rclcpp.hpp>
 
 // Include our custom message type definition.
-#include "rob599_msgs/srv/fib_service.hpp"
+#include <rob599_msgs/srv/fib_service.hpp>
 
 // The service callback is going to need two parameters, so we declare that
 // we're going to use two placeholders.
