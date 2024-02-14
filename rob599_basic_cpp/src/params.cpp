@@ -28,7 +28,11 @@ public:
 		this->declare_parameter("speed", 10.0, desc);
 	}
 
+	// This is a convenience function that allows the class to set the parameter value.
 	void set_speed(const double speed) {
+		// We have to construct a vector of Parameters.  In this case, there's only going
+		// to be one.  Parameters have a key and a value.  The set_parameters function,
+		// called on the node, actually sets the parameters.
 	    std::vector<rclcpp::Parameter> parameter_values{rclcpp::Parameter("speed", speed)};
 	    this->set_parameters(parameter_values);		
 	}
@@ -39,6 +43,7 @@ private:
 
 	// The callback that the timer uses.
 	void timer_callback() {
+		// Polling for the value requires the name, and a call to a type-specific function.
 		double value = this->get_parameter("speed").as_double();
 
 		// Record in the log that we published the message.
