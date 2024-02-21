@@ -29,8 +29,9 @@ add_executable(fib_client src/fib_client.cpp)
 add_executable(fib_client_2 src/fib_client_2.cpp)
 #add_executable(fib_action_server src/fib_action_server.cpp)
 #add_executable(fib_action_client src/fib_action_client.cpp)
-#add_executable(cloud_generator src/cloud_generator.cpp)
-#add_executable(cloud_timer src/cloud_timer.cpp)
+add_executable(cloud_generator src/cloud_generator.cpp src/cloud_generator_node.cpp)
+add_executable(cloud_timer src/cloud_timer.cpp src/cloud_timer_node.cpp)
+add_executable(cloud_combined src/cloud_combined.cpp src/cloud_generator_node.cpp src/cloud_timer_node.cpp)
 
 # List the executable dependencies here.
 ament_target_dependencies(node rclcpp)
@@ -42,8 +43,9 @@ ament_target_dependencies(fib_client rclcpp std_msgs rob599_msgs)
 ament_target_dependencies(fib_client_2 rclcpp std_msgs rob599_msgs)
 #ament_target_dependencies(fib_action_server rclcpp std_msgs rob599_msgs rclcpp_action)
 #ament_target_dependencies(fib_action_client rclcpp std_msgs rob599_msgs rclcpp_action)
-#ament_target_dependencies(cloud_generator rclcpp sensor_msgs)
-#ament_target_dependencies(cloud_timer rclcpp std_msgs sensor_msgs)
+ament_target_dependencies(cloud_generator rclcpp sensor_msgs)
+ament_target_dependencies(cloud_timer rclcpp std_msgs sensor_msgs)
+ament_target_dependencies(cloud_combined rclcpp std_msgs sensor_msgs)
 
 # Where do we want these to be installed?
 install(TARGETS
@@ -56,8 +58,9 @@ install(TARGETS
   fib_client_2
 #  fib_action_server
 #  fib_action_client
-#  cloud_generator
-#  cloud_timer
+  cloud_generator
+  cloud_timer
+  cloud_combined
   DESTINATION lib/${PROJECT_NAME}
 )
 
