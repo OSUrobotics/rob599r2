@@ -1,10 +1,10 @@
+#!/usr/bin/env python3
+
 # combined.py
 #
 # Bill Smart
 #
 # An example of more than one node in a Python executable.
-
-#!/usr/bin/env python3
 
 # Import the basic ROS functionality.
 import rclpy

@@ -33,6 +33,8 @@ setup(
             'doubler = rob599_basic.multiplier:doubler',
             'noiser = rob599_basic.multiplier:noiser',
             'parameter_demo = rob599_basic.params:main',
+            'combined = rob599_basic.combined:main',
+            'cloud_generator = rob599_basic.cloud_generator:main',
         ],
     },
 )
