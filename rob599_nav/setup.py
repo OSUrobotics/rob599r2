@@ -4,7 +4,7 @@ package_name = 'rob599_nav'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.0.1',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -13,9 +13,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='smartw',
+    maintainer='Bill Smart',
     maintainer_email='bill.smart@oregonstate.edu',
-    description='TODO: Package description',
+    description='ROS 2 Navigation Examples',
     license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
