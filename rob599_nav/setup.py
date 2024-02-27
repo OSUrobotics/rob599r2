@@ -24,6 +24,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'transform = rob599_nav.transform:main',
+            'breadcrumbs = rob599_nav.breadcrumbs:main',
         ],
     },
 )
