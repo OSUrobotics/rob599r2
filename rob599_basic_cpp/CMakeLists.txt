@@ -3,7 +3,9 @@ project(rob599_basic_cpp)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+#  set(CMAKE_CXX_STANDARD 14)
+  # Behavior trees need C++17 or later.
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 
 # Set your compile options here.
@@ -32,6 +34,8 @@ add_executable(fib_client_2 src/fib_client_2.cpp)
 add_executable(cloud_generator src/cloud_generator.cpp src/cloud_generator_node.cpp)
 add_executable(cloud_timer src/cloud_timer.cpp src/cloud_timer_node.cpp)
 add_executable(cloud_combined src/cloud_combined.cpp src/cloud_generator_node.cpp src/cloud_timer_node.cpp)
+add_executable(bt_example src/bt_example.cpp)
+add_executable(bt_async_example src/bt_async_example.cpp)
 
 # List the executable dependencies here.
 ament_target_dependencies(node rclcpp)
@@ -47,6 +51,10 @@ ament_target_dependencies(cloud_generator rclcpp sensor_msgs)
 ament_target_dependencies(cloud_timer rclcpp std_msgs sensor_msgs)
 ament_target_dependencies(cloud_combined rclcpp std_msgs sensor_msgs)
 
+# Link libraries for the behavior tree stuff
+target_link_libraries(bt_example behaviortree_cpp)
+target_link_libraries(bt_async_example behaviortree_cpp)
+
 # Where do we want these to be installed?
 install(TARGETS
   node
@@ -61,6 +69,8 @@ install(TARGETS
   cloud_generator
   cloud_timer
   cloud_combined
+  bt_example
+  bt_async_example
   DESTINATION lib/${PROJECT_NAME}
 )
 

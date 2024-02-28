@@ -1,0 +1,9 @@
+<root BTCPP_format="4">
+  <BehaviorTree>
+  	<Sequence>
+  		<Find />
+  		<Pick />
+  		<Place />
+  	</Sequence>
+  </BehaviorTree>
+</root>

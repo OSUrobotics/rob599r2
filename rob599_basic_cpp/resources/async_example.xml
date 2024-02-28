@@ -1,0 +1,9 @@
+<root BTCPP_format="4">
+    <BehaviorTree>
+ 		<Sequence>
+ 			<Speak message="starting" />
+            <MoveBase goal="somewhere else" />
+            <Speak message="done!" />
+        </Sequence>
+     </BehaviorTree>
+ </root>

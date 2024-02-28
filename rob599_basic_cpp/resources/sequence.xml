@@ -1,0 +1,9 @@
+<root BTCPP_format="4">
+  <BehaviorTree>
+  	<Sequence>
+  		<Speak message="Hello" />
+  		<Speak message="World!" />
+  		<Speak message="Hello, World!" />
+  	</Sequence>
+  </BehaviorTree>
+</root>
