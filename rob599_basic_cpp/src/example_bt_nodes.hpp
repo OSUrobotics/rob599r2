@@ -11,6 +11,13 @@ using namespace std::chrono_literals;
 
 using namespace BT;
 
+
+// Set up random number generation.
+std::random_device dev;
+std::mt19937 rng(dev());
+std::uniform_int_distribution<std::mt19937::result_type> dist(0, 4);
+
+// Set the distance to a simulated object to a random value.
 int distance = dist(rng);
 
 
@@ -136,12 +143,12 @@ class MoveBaseAction : public StatefulActionNode {
   public:
     MoveBaseAction(const std::string &name, const BT::NodeConfig &config) :StatefulActionNode(name, config) {}
 
-    static BT::PortsList providedPorts() {
-        return{ BT::InputPort<std::string>("goal") };
+    static PortsList providedPorts() {
+        return{InputPort<std::string>("goal")};
     }
 
     // Executed once at the beginning.
-    BT::NodeStatus onStart() override {
+    NodeStatus onStart() override {
     	getInput<std::string>("goal", goal_);
 
     	std::cout << "Heading for: " << goal_ << std::endl;
@@ -155,7 +162,7 @@ class MoveBaseAction : public StatefulActionNode {
 
     // If onStart() returns RUNNING, repeatedly call this function until it returns something that it not
     // RUNNING.
-    BT::NodeStatus onRunning() override {
+    NodeStatus onRunning() override {
     	// Are we done?
     	if (std::chrono::system_clock::now() >= completion_time_) {
     		std::cout << "Done" << std::endl;
