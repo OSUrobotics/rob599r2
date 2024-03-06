@@ -16,7 +16,7 @@
         <Place />
 
       </Sequence>
-      <Failure />
+      <Fail />
     </Fallback>
   </BehaviorTree>
 </root>
