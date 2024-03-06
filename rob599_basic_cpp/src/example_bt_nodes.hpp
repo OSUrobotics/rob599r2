@@ -11,10 +11,6 @@ using namespace std::chrono_literals;
 
 using namespace BT;
 
-std::random_device dev;
-std::mt19937 rng(dev());
-std::uniform_int_distribution<int> dist(0, 4);
-
 int distance = dist(rng);
 
 
@@ -135,6 +131,7 @@ NodeStatus ThingClose() {
 }
 
 
+// Largely copied from https://www.behaviortree.dev/docs/tutorial-basics/tutorial_04_sequence
 class MoveBaseAction : public StatefulActionNode {
   public:
     MoveBaseAction(const std::string &name, const BT::NodeConfig &config) :StatefulActionNode(name, config) {}
